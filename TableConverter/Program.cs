@@ -19,6 +19,7 @@ namespace TableConverter
                 {
                     input = input.Replace("\r", "");
                 }
+                if (!input.EndsWith("\n")) input += "\n";
                 var rows = input.Split('\n').ToList().Reverse<string>().Skip(1).Reverse<string>();
                 var cells = rows.ToList().Select(x => x.Split('\t').ToList());
                 Console.WriteLine("CONSTRUCTING OUTPUT");
